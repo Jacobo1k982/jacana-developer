@@ -1,8 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d1117;
+  --foreground: #c9d1d9;
+  --muted: #8b949e;
+  --border: #30363d;
+  --card-bg: #161b22;
+  --header-bg: #0d1117;
+  --accent: #58a6ff;
+  --success: #3fb950;
+  --danger: #f85149;
+  --warning: #d29922;
+  --hover-bg: #30363d1a;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* Opcional: modo claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #1f2328;
+    --muted: #6e7781;
+    --border: #d0d7de;
+    --card-bg: #f6f8fa;
+    --header-bg: #ffffff;
+    --accent: #0969da;
+    --success: #2da44e;
+    --danger: #cf222e;
+    --warning: #9a6700;
+  }
 }
 
 @theme inline {
@@ -23,4 +50,147 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  @apply bg-gray-900 text-gray-100;
+  
+}
+
+.typing-cursor {
+  border-right: 2px solid transparent;
+}
+
+/* Animación de cursor parpadeante */
+.typing-cursor::after {
+  content: '';
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #22d3ee; }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glow en hover para botones */
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slide-in-from-top 0.2s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slide-in-from-top 0.1s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.1s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Cursor de terminal */
+.typing-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--success);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+.slide-in-from-top {
+  animation: slideInTop 0.15s ease-out forwards;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.2s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
