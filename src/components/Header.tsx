@@ -66,7 +66,6 @@ export default function Header() {
                             {[
                                 { label: 'Servicios', href: '#services' },
                                 { label: 'Stack', href: '#tech' },
-                                { label: 'Casos', href: '#testimonials' },
                                 { label: 'Precios', href: '#pricing' },
                                 { label: 'Docs', href: '#docs' },
                             ].map((item) => (
@@ -510,7 +509,6 @@ export default function Header() {
                             {[
                                 { label: 'Servicios', href: '#services' },
                                 { label: 'Stack', href: '#tech' },
-                                { label: 'Casos', href: '#testimonials' },
                                 { label: 'Precios', href: '#pricing' },
                                 { label: 'Docs', href: '#docs' },
                             ].map((item) => (

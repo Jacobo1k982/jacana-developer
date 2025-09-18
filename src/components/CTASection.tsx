@@ -4,16 +4,18 @@ import { motion } from 'framer-motion';
 
 export default function CTASection() {
     return (
-        <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900 via-purple-900/10 to-cyan-900/10">
+        <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
             <div className="max-w-4xl mx-auto text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-5xl font-bold mb-6"
+                    className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+                    style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
                 >
                     ¿Listo para tu próximo
-                    <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    <br />
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">
                         hit tecnológico?
                     </span>
                 </motion.h2>
@@ -23,17 +25,21 @@ export default function CTASection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-xl text-[var(--muted)] mb-10 max-w-2xl mx-auto"
+                    className="text-gray-600 dark:text-gray-400 text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed"
+                    style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
                 >
                     No somos freelancers. Somos tu equipo de desarrollo extendido.
                 </motion.p>
 
                 <motion.div
-                    whileHover={{ scale: 1.03, boxShadow: "0 0 25px rgba(88, 166, 255, 0.4)" }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ y: -1 }}
+                    whileTap={{ y: 1 }}
                     className="inline-block"
                 >
-                    <button className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-md text-lg transition-all duration-300 shadow-lg hover:shadow-cyan-500/30">
+                    <button
+                        className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 font-semibold py-3 px-6 rounded-md text-sm md:text-base border border-transparent transition-colors duration-150 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white"
+                        style={{ fontFamily: 'Consolas, Monaco, "Andale Mono", monospace' }}
+                    >
                         $ contactar --urgente
                     </button>
                 </motion.div>
