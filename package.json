@@ -11,7 +11,7 @@
   "dependencies": {
     "@primer/octicons-react": "^19.18.0",
     "@tailwindcss/vite": "^4.1.13",
-    "framer-motion": "^12.23.13",
+    "framer-motion": "^12.23.14",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-avatar": "^5.0.4",
