@@ -9,9 +9,9 @@ import {
     RssIcon,
     ArrowUpIcon,
 } from '@primer/octicons-react';
-import { motion, AnimatePresence } from 'framer-motion'; // Opcional, si usas animación en "Volver arriba"
+import { motion, AnimatePresence } from 'framer-motion';
 
-// ➡️ Componente de separador (fuera de Footer)
+// ➡️ Componente de separador
 function Separator() {
     return (
         <span
@@ -23,7 +23,7 @@ function Separator() {
     );
 }
 
-// ➡️ Componente reutilizable para enlaces con íconos + tooltip (fuera de Footer)
+// ➡️ Componente reutilizable para enlaces con íconos + tooltip
 function FooterIconLink({
     href,
     label,
@@ -63,10 +63,10 @@ function FooterIconLink({
 export default function Footer() {
     const [displayText, setDisplayText] = useState('');
     const [showBackToTop, setShowBackToTop] = useState(false);
-    const fullText = `echo "© 2025 JACANA DEV — Fullstack Architects"`;
+    const fullText = `echo '© 2025 JACANA DEV — Fullstack Architects'`; // 👈 Usamos comillas simples aquí
     const prompt = `jacana-dev@production:~$ `;
 
-    // Efecto typing
+    // Efecto typing — ✅ fullText en dependencias
     useEffect(() => {
         let i = 0;
         const timer = setInterval(() => {
@@ -78,7 +78,7 @@ export default function Footer() {
             }
         }, 50);
         return () => clearInterval(timer);
-    }, []);
+    }, [fullText]); // ✅ Dependencia añadida
 
     // Mostrar "Volver arriba" al scrollear
     useEffect(() => {
@@ -110,7 +110,10 @@ export default function Footer() {
                         <span className="text-green-600 dark:text-green-400 select-none">
                             {prompt}
                         </span>
-                        <span className="text-gray-400">"{displayText}"</span>
+                        <span className="text-blue-600 dark:text-blue-400 select-none">
+                            echo
+                        </span>{' '}
+                        <span className="text-gray-400">'{displayText}'</span> {/* ✅ Comillas simples */}
                         {displayText.length < fullText.length && (
                             <span className="animate-pulse ml-0.5 text-green-500 dark:text-green-400">
                                 ▌
