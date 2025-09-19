@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function CTASection() {
     return (
-        <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0d1117]">
             <div className="max-w-4xl mx-auto text-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

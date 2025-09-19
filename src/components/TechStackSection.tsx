@@ -19,7 +19,7 @@ const techStack = [
 
 export default function TechStackSection() {
     return (
-        <section id="tech" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <section id="tech" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0d1117]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h2
