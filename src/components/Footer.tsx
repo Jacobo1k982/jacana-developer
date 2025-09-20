@@ -63,7 +63,7 @@ function FooterIconLink({
 export default function Footer() {
     const [displayText, setDisplayText] = useState('');
     const [showBackToTop, setShowBackToTop] = useState(false);
-    const fullText = `echo '© 2025 JACANA DEV — Fullstack Architects'`; // 👈 Usamos comillas simples aquí
+    const fullText = `echo &apos;© 2025 JACANA DEV — Fullstack Architects&apos;`; // 👈 Usamos comillas simples aquí
     const prompt = `jacana-dev@production:~$ `;
 
     // Efecto typing — ✅ fullText en dependencias
@@ -113,7 +113,7 @@ export default function Footer() {
                         <span className="text-blue-600 dark:text-blue-400 select-none">
                             echo
                         </span>{' '}
-                        <span className="text-gray-400">'{displayText}'</span> {/* ✅ Comillas simples */}
+                        <span className="text-gray-400">&apos;{displayText}&apos;</span> {/* ✅ Escapado */}
                         {displayText.length < fullText.length && (
                             <span className="animate-pulse ml-0.5 text-green-500 dark:text-green-400">
                                 ▌
